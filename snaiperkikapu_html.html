@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>snaiperkikapu.html</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#1a1a1a">
+<title>OPERACION KIKAPU - FURCH & SMITH</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:monospace}
+body{background:#0f0f0f;color:#00ff88}
+.header{background:#000;padding:10px;text-align:center;border-bottom:2px solid #00ff88;position:sticky;top:0;z-index:100}
+#map{height:45vh;width:100%;filter:grayscale(0.5) hue-rotate(80deg)}
+.panel{padding:10px}
+.card{background:#1a1a1a;border:1px solid #00ff88;border-radius:10px;padding:10px;margin:8px 0}
+.btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:900;margin:6px 0;font-size:14px}
+.btn-sos{background:#ff0000;color:#fff;animation:pulse 1s infinite}
+.btn-green{background:#00ff88;color:#000}
+.btn-yellow{background:#facc15;color:#000}
+@keyframes pulse{0%{opacity:1}50%{opacity:.6}100%{opacity:1}}
+.compass{width:100px;height:100px;border:2px solid #00ff88;border-radius:50%;margin:10px auto;position:relative}
+#arrow{position:absolute;top:10px;left:50%;width:4px;height:40px;background:#ff0000;transform-origin:bottom center;transform:translateX(-50%) rotate(0deg)}
+.stat{display:flex;justify-content:space-between;font-size:12px}
+</style>
+</head>
+<body>
+<div class="header">
+<div>🎯 OPERACIÓN KIKAPÚ</div>
+<small>Comandante FURCH > Agente SMITH | 28.0391°N -101.7856°W</small>
+<div class="stat"><span>🎯 OBJ: EL NOTARIO</span><span id="gpsStatus">GPS: BUSCANDO...</span></div>
+</div>
+
+<div id="map"></div>
+
+<div class="panel">
+<div class="card">
+<div class="stat"><b>BRÚJULA DE RASTREO KIKAPÚ</b><span id="heading">0°</span></div>
+<div class="compass"><div id="arrow"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:10px">N</div></div>
+<small style="text-align:center;display:block">Apunta al manantial El Nacimiento. Si la flecha apunta al rojo, estás viendo al Norte.</small>
+</div>
+
+<div class="card">
+<b>📡 COORDENADAS ACTUALES SMITH:</b>
+<div id="coords" style="font-size:12px;margin:6px 0">Esperando GPS...</div>
+<div class="stat"><span>Distancia a Nacimiento:</span><span id="dist">-- m</span></div>
+<div class="stat"><span>Objetivo Escrituras Falsas:</span><span>400m NE</span></div>
+</div>
+
+<div class="card" style="border-color:#facc15">
+<b>📋 ORDEN DE MISIÓN:</b>
+<ol style="font-size:11px;margin-left:14px;margin-top:6px">
+<li>[ ] Tiro 1: Maletín de escrituras (foto)</li>
+<li>[ ] Tiro 2: Llanta Lobo blanca (inmovilizar)</li>
+<li>[ ] Extrae USB minera</li>
+</ol>
+</div>
+
+<button class="btn btn-sos" onclick="sos()">🆘 SOS - ENVIAR UBICACIÓN A BASE 8721551986</button>
+<button class="btn btn-green" onclick="reporte('MALETIN FOTOGRAFIADO')">✅ TIRO 1 - MALETÍN</button>
+<button class="btn btn-yellow" onclick="reporte('LLANTA REVENTADA - OBJ INMOVILIZADO')">✅ TIRO 2 - LLANTA</button>
+<button class="btn btn-green" onclick="reporte('USB RECUPERADA')">💾 USB RECUPERADA</button>
+
+<div style="font-size:9px;text-align:center;opacity:.5;margin-top:8px">Misión no letal - Solo documentación y marcaje - Kikapú son aliados, no entrar sin tabaco.</div>
+</div>
+
+<script>
+// Coordenadas reales de Tribu Kikapoo
+const NACIMIENTO = [28.039138888889, -101.78566666667];
+let myPos = null;
+let map = L.map('map').setView(NACIMIENTO, 14);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);
+let targetMarker = L.marker(NACIMIENTO).addTo(map).bindPopup("EL NACIMIENTO - TRIBU KIKAPOO<br>7000 hectáreas protegidas desde 1919<br>OBJETIVO: Escrituras falsas").openPopup();
+let meMarker = null;
+
+// GPS
+navigator.geolocation.watchPosition(pos=>{
+  myPos = [pos.coords.latitude, pos.coords.longitude];
+  document.getElementById('coords').innerText = myPos[0].toFixed(6)+", "+myPos[1].toFixed(6)+" | Precisión: "+pos.coords.accuracy.toFixed(0)+"m";
+  document.getElementById('gpsStatus').innerText = "GPS: OK";
+  if(!meMarker){ meMarker = L.marker(myPos,{icon:L.divIcon({html:"🎯",className:""})}).addTo(map).bindPopup("SMITH AQUÍ"); map.setView(myPos,15); }
+  else meMarker.setLatLng(myPos);
+  let d = map.distance(myPos, NACIMIENTO);
+  document.getElementById('dist').innerText = d>1000?(d/1000).toFixed(2)+" km":d.toFixed(0)+" m";
+}, err=>{document.getElementById('gpsStatus').innerText="GPS: SIN SEÑAL";}, {enableHighAccuracy:true});
+
+// Brujula
+window.addEventListener('deviceorientation', e=>{
+  let h = e.webkitCompassHeading || (360 - e.alpha);
+  if(h){ document.getElementById('heading').innerText = h.toFixed(0)+"°"; document.getElementById('arrow').style.transform = `translateX(-50%) rotate(${h}deg)`; }
+});
+
+function sos(){
+ if(!myPos){ alert("Sin GPS aún, Smith!"); return; }
+ let msg = `*SOS OPERACION KIKAPU - SMITH*%0A`+
+ `Comandante Furch, estoy en problemas con EL NOTARIO en Nacimiento Kikapú.%0A`+
+ `*MI UBICACION:* https://www.google.com/maps?q=${myPos[0]},${myPos[1]}%0A`+
+ `*COORDS:* ${myPos[0].toFixed(6)}, ${myPos[1].toFixed(6)}%0A`+
+ `*OBJETIVO:* ${NACIMIENTO[0]}, ${NACIMIENTO[1]}%0A`+
+ `Manda apoyo Kikapú!`;
+ window.open(`https://wa.me/528721245717?text=${msg}`,'_blank');
+}
+
+function reporte(texto){
+ if(!myPos) myPos = NACIMIENTO;
+ let msg = `*REPORTE MISION KIKAPU*%0A`+
+ `Agente: SMITH%0A`+
+ `Comandante: FURCH%0A`+
+ `Evento: ${texto}%0A`+
+ `Ubicación: https://www.google.com/maps?q=${myPos[0]},${myPos[1]}%0A`+
+ `Hora: ${new Date().toLocaleString()}`;
+ window.open(`https://wa.me/528721245717?text=${msg}`,'_blank');
+}
+</script>
+</body>
+</html>
+  <script>
+
+  </script>
+</body>
+</html>
