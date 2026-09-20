@@ -1,71 +1,44 @@
-# 🧪 LABORATORIO ISAÍAS - Soluciones Reales
+# 🧪 LABORATORIO ISAÍAS | CIBER SOLUCIONES
+### Isaías Hernández Ortiz - CECyTEC Luchana | Técnico Proceso Industrial
 
-> **Problemas Reales, Soluciones Reales, Documentado por mí.**
+![Laboratorio Isaias Ciber Soluciones](docs/ciber-soluciones.png)
 
-### 👤 Isaías Hernández Ortiz
-**Técnico en Proceso Industrial | Área Físico-Matemático**
-Egresado **CECyTEC Luchana, Coahuila, México**
-Especialista en Mantenimiento Automotriz Correctivo y Preventivo
+> **Conectan Fierros, Código y Mundos.**
+> Problemas Reales, Soluciones Reales, Documentado por mí.
 
-📍 Luchana, Coahuila | 🌍 Disponible para empleo en cualquier parte del mundo (Remoto / Presencial)
-📲 WhatsApp: +52 8721562620. | 📧 isaias.hernandez.hernandezortizi934@gmail.com
+**📍 Luchana, Coahuila | 🌍 Disponible para empleo mundial - Remoto / Presencial**
 
----
+### 🎯 ¿QUIÉN SOY?
+Técnico egresado CECyTEC Luchana, área Físico-Matemático. Especialista en Mantenimiento Automotriz Correctivo y Preventivo. Creador de Quantum777, Emergencias Luchanas y Paramédico Offline.
 
-### 🎯 ¿QUÉ BUSCO?
-Empleo como **Programador de Soluciones, Asesor Técnico, o Técnico de Mantenimiento**.
-No busco un título, busco un problema que resolver. Mi perfil habla por mí.
+No vendo cursos. Documento fallas de campo con video y prueba de lab.
 
-### 🛠️ ¿QUÉ HAGO?
-Convierto fallas de campo en conocimiento documentado.
+### 🚀 MIS LABORATORIOS ACTIVOS
+Todos funcionan y están en GitHub Pages:
 
-- **Mecánica:** Motores 150cc, frenos de tambor, transmisiones, sistema eléctrico.
-- **Mantenimiento:** Preventivo y correctivo en condiciones extremas (terracería, desierto).
-- **Programación / Lógica:** Automatización de bitácoras, HTML/CSS/JS, documentación técnica, video-evidencia.
-- **Metodología:** Cada falla = Foto + Diagnóstico + Solución + Video Prueba de Lab.
+1.  **Q777 - EL LAGARTO** - Kit de encendido inteligente mexicano
+2.  **Emergencias Luchanas** - Reporte GPS + WhatsApp [Live](https://blackpanter4.github.io/emergencias/)
+3.  **Paramedico Offline** - Celular como sensor sin internet
+4.  **RHpro.com** - Reclutamiento para SNE Torreón
+5.  **Quantum777 Verificador** - Perro Guardián anti-phishing
+6.  **NotiWeb4T** - Verdad Protegida
 
-### 📂 ESTRUCTURA DEL LABORATORIO
+### 🛠️ 15 CIBER SOLUCIONES QUE OFREZCO
+(Ver imagen arriba - formato viral)
 
-/lab-isaias/
-├── index.html (Mi web oficial)
-├── diario/
-│   ├── 2026-09-19-vento-freno-trasero.md
-│   ├── 2026-09-18-cadena-floja.md
-│   └── ...
-├── evidencia/
-│   ├── fotos/
-│   └── videos/
-└── README.md (este archivo)
+Mantenimiento Preventivo/Correctivo, Diagnóstico Eléctrico, Programación Web, Automatización, Soporte Remoto, Documentación Técnica, Pruebas de Lab, Motores 150cc, APIs y Conexiones, Asesoría Técnica.
 
-### 📅 FORMATO DIARIO - MI CV VIVIENTE
+### 📅 BITÁCORA DIARIA - MI CV VIVIENTE
+Cada día 1 problema real: [Ver en /diario/]
 
-Todos los días documento 1 problema:
+**Ejemplo #07 - 19/09/2026:** Vento 150 leva barrida - Solución 90° + grasa litio - Video prueba
 
-**DIARIO DE CAMPO #07 | 19/09/2026**
-**PROBLEMA REAL:** Vento 150 se queda sin freno, leva barrida.
-**SÍNTOMA:** Leva no regresa, se brinca diente.
-**DIAGNÓSTICO:** Estrías sin grasa + lodo de brecha.
-**SOLUCIÓN REAL:** Reposicionar a 90°, engrase litio, rondana presión.
-**PRUEBA DE LAB:** [Video 30s] + [Foto antes/después]
-**TIEMPO/COSTO:** 20 min / $65 MXN
+### 📲 CONTRÁTAME
+Mi perfil habla por mí. No necesito entrevista larga, mira 3 videos de mi lab.
 
-### 💻 TECH STACK
-`Mecánica Automotriz` `Diagnóstico Eléctrico` `Mantenimiento` `HTML` `CSS` `JavaScript` `GitHub Pages` `Documentación Técnica` `Video Edición`
-
-### 🚀 ¿QUIERES CONTRATARME?
-No necesitas pedirme CV. Mira mi diario de 30 días.
-
-**Estoy listo para:**
-- Soporte técnico remoto
-- Asesoría para talleres
-- Creación de manuales de mantenimiento
-- Programación de páginas de evidencia para tu empresa
-
-**Contacto directo:**
-👉 [WhatsApp Directo](https://wa.me/528721562620?text=Hola%20Isaias%20vi%20tu%20Laboratorio%20en%20GitHub)
-👉 [Facebook Lab](https://facebook.com/tu-pagina)
-👉 [Mi Web Lab](https://tu-usuario.github.io/lab-isaias/)
+**WhatsApp:** [Clic Aquí](https://wa.me/52861XXXXXXX?text=Hola%20Isaias%20vi%20tu%20Laboratorio%20Ciber%20Soluciones)
+**Facebook:** /Laboratorio Isaias
+**Instagram:** @lab.isaias
 
 ---
-_Hecho en el desierto de Luchana, con herramienta en mano y código en la otra._
-**CECyTEC Luchana - Orgullo Físico-Matemático - 2026**# Laboratorio-web-
+Hecho en Luchana, Coahuila. Con herramienta en una mano y código en la otra.
