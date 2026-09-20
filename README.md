@@ -8,7 +8,7 @@ Egresado **CECyTEC Luchana, Coahuila, México**
 Especialista en Mantenimiento Automotriz Correctivo y Preventivo
 
 📍 Luchana, Coahuila | 🌍 Disponible para empleo en cualquier parte del mundo (Remoto / Presencial)
-📲 WhatsApp: +52 861 XXX XXXX | 📧 isaias.hernandez.lab@ejemplo.com
+📲 WhatsApp: +52 8721562620. | 📧 isaias.hernandez.hernandezortizi934@gmail.com
 
 ---
 
