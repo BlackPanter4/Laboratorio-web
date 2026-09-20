@@ -36,7 +36,7 @@ Cada día 1 problema real: [Ver en /diario/]
 ### 📲 CONTRÁTAME
 Mi perfil habla por mí. No necesito entrevista larga, mira 3 videos de mi lab.
 
-**WhatsApp:** [Clic Aquí](https://wa.me/52861XXXXXXX?text=Hola%20Isaias%20vi%20tu%20Laboratorio%20Ciber%20Soluciones)
+**WhatsApp:** [Clic Aquí](https://wa.me/528721562620text=Hola%20Isaias%20vi%20tu%20Laboratorio%20Ciber%20Soluciones)
 **Facebook:** /Laboratorio Isaias
 **Instagram:** @lab.isaias
 
